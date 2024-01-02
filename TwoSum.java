@@ -2,6 +2,24 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class TwoSum {
+
+//    Solution 1: (Brute Force)
+
+//   /*
+   public int[] twoSum(int[] nums, int target) {
+        for (int i = 0; i < nums.length; i++) {
+            for (int j = i + 1; j < nums.length; j++) {
+                if (nums[i] + nums[j] == target) {
+                    return new int[]{i, j};
+                }
+            }
+        }
+        return new int[]{};
+    }
+//    */
+
+//    Solution 2: (One-pass Hash Table)
+    /*
     public int[] twoSum(int[] nums, int target) {
         // Create a map to store the numbers and their indices
         Map<Integer, Integer> numsMap = new HashMap<>();
@@ -17,6 +35,7 @@ public class TwoSum {
         }
         throw new IllegalArgumentException();
     }
+    */
 
     public static void main(String[] args) {
         TwoSum solution = new TwoSum();
@@ -25,15 +44,15 @@ public class TwoSum {
         // Output the results
         System.out.println("Output: [" + result1[0] + ", " + result1[1] + "]"); // Output: [0, 3]
 
-        int[] result2 = solution.twoSum(new int[]{3, 1, 4, 8, 5}, 9);
-        System.out.println("Output: [" + result2[0] + ", " + result2[1] + "]"); // Output: [2, 4]
+        int[] result2 = solution.twoSum(new int[]{3, 1, 4, 8, 5}, 1);
+        System.out.println("Output: [" + result2[0] + ", " + result2[1] + "]"); // Output: [1, 3]
 
         int[] result3 = solution.twoSum(new int[]{10, 20, 30, 40, 50}, 90);
         System.out.println("Output: [" + result3[0] + ", " + result3[1] + "]"); // Output: [3, 4]
     }
 }
 
-//HOW?-
+//HOW? one pass hash table-
 //Now, let's consider the array nums = {2, 7, 11, 15} and the target 9.
 //
 //First iteration (i = 0):
